@@ -1,0 +1,163 @@
+
+
+.sidebar-container {
+  display: flex;
+ overflow-y: scroll;
+  min-height: 99vh; /* Ensure container is at least viewport height */
+}
+
+.sidebar {
+  background-color: black;
+  padding: 5%;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Stick to the top of the viewport */
+  align-self: flex-start; /* Important for sticky to work in flex container */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+.sidebar-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Allow main content to scroll */
+}
+/* General sidebar styling */
+.sidebar {
+  width: 30vw;
+  min-height: 100vh;
+  background-color: #1e293b; /* dark slate */
+  color: rgb(0, 0, 0);
+  padding: 1.5rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Dropdown select */
+.sidebar-select select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #c2cbd7;
+  color: #000000;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar-select select:focus {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Search input */
+.sidebar-search input {
+    text-align: center;
+  width: 50vw;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #334155;
+    background-color: #c2cbd7;
+
+  color: #000000;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar-search input::placeholder {
+  color: #000000;
+}
+
+.sidebar-search input:focus {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* gap: 1rem; */
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 1rem; */
+     background-color: #c2cbd7;
+}
+
+/* Common button style */
+.report-button {
+    background-color: #060606;
+  width: 50vw;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color:black
+   
+}
+#btn2{
+    margin-bottom: 6%;
+}
+
+/* Optional hover effects */
+.report-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* Common button style */
+.report-button {
+    /* margin-top:5%; */
+  width: 70%;
+  font-weight: 600;
+  border-radius: 10px;
+  /* padding: 10px 16px; */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+   color:black
+
+}
+
+/* Optional hover effects */
+.report-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.sidebar-select Button{
+    color:white;
+    width:18vw ;
+    margin-bottom: 2px;
+}
+#ToggleBtns Button{
+/* margin-right: 7px; */
+  /* width:15vw; */
+  margin-left: 40%;
+  color: rgb(0, 0, 0);
+  /* font-size: 2rem; */
+  
+
+}
+#ToggleBtns{
+  /* width: 15vw; */
+  padding: 5px;
+  margin-bottom: -13%;
+ 
+}
+#BtnSec2 Button{
+
+  background-color: rgb(254, 146, 146);
+}

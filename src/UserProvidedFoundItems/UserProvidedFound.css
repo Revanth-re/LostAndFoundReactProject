@@ -1,0 +1,54 @@
+.profile-card {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.profile-card h2 {
+  font-size: 1.2rem;
+  margin: 6px 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.profile-card h3 {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 12px;
+}
+
+.profile-card button {
+  margin-top: 18px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-card button:hover {
+  background-color: #0056b3;
+}
+
+

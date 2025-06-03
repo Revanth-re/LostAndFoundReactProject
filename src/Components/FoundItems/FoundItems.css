@@ -1,0 +1,51 @@
+.found-items-page {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.instructions-card {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #28a745;
+}
+
+.instructions-title {
+  color: #28a745;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.instructions-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.report-button {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #28a745;
+  border-color: #28a745;
+  transition: all 0.3s ease;
+}
+
+.report-button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
