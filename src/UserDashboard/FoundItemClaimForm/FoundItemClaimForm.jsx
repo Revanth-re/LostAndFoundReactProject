@@ -212,7 +212,7 @@ import {
   arrayUnion,
 } from "firebase/firestore";
 import "./FoundItemClaimForm.css";
-
+import { toast } from 'react-toastify';
 const FoundItemClaimForm = () => {
   const [userDocId, setUserDocId] = useState("");
   const [open, setOpen] = useState(false);
@@ -227,25 +227,29 @@ const FoundItemClaimForm = () => {
 
   useEffect(() => {
     const fetchUserDocId = async () => {
-      const DataFoundFromLs = JSON.parse(localStorage.getItem("ClaimFounds"));
+      const DataFoundFromLs = JSON.parse(localStorage.getItem("ClaimLosts"));
    
+console.log(DataFoundFromLs)
 
-      const userEmail = DataFoundFromLs[0].email;
-      const snapshot = await getDocs(collection(db, "users"))
+      const userEmail = DataFoundFromLs.email;
+      console.log(userEmail);
+      
+      const snapshot = await getDocs(collection(db, "FoundUsers"))
 console.log(snapshot);
 
       snapshot.forEach((docSnap) => {
-        console.log(docSnap.id)
         
-        const userItems = docSnap.data().WholeItems || [];
+        
+        const userItems = docSnap.data().FoundItems || [];
+       console.log(userItems)
        
-        
-        const foundItem = userItems.find((item) => item.email === userEmail);
-        console.log(foundItem);
+        console.log(docSnap.data())
+      const FoundItems=userItems.find((x)=>x.email === userEmail)
+        console.log(FoundItems);
         // console.log(docSnap.id);
         
-        if (foundItem) {
-          setUserDocId(docSnap.id) // Save correct document ID
+        if (FoundItems) {
+          setUserDocId(docSnap.data().name) // Save correct document ID
         }
       });
     };
@@ -267,7 +271,7 @@ console.log(snapshot);
       }
 console.log(userDocId)
 
-      const docRef = doc(db, "users", userDocId)
+      const docRef = doc(db, "FoundUsers", userDocId)
 
       await updateDoc(docRef, {
         // arrayUnion()
@@ -276,7 +280,8 @@ console.log(userDocId)
         
       });
 
-
+toast.success("Verification Successfull ")
+ handleClose();
       setClaimForm({
         Fullname: "",
         Contact: "",
@@ -284,7 +289,8 @@ console.log(userDocId)
         DescriptionPlace: "",
         image: "",
       });
-      alert("Form Submitted")
+    
+      
     } catch (error) {
       console.error("Error submitting claim:", error);
       alert("Something went wrong. Try again.");

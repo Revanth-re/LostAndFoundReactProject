@@ -1,0 +1,94 @@
+.card-details-container {
+  padding: 2rem;
+  max-width: 90%;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card-box {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.image-container {
+  flex: 1 1 40%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 0.05rem solid #ddd;
+}
+
+.details-container {
+  flex: 1 1 55%;
+}
+
+.details-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.details-container p {
+  margin: 0.3rem 0;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.details-container p strong {
+  color: #222;
+}
+
+.button-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.button-group .btn-success {
+  background-color: #28a745;
+}
+
+.button-group .btn-danger {
+  background-color: #dc3545;
+}
+
+.button-group .btn-secondary {
+  background-color: #6c757d;
+}
+
+.button-group button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-box {
+    flex-direction: column;
+  }
+
+  .image-container,
+  .details-container {
+    flex: 1 1 100%;
+  }
+}

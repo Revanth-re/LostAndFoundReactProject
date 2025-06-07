@@ -2,14 +2,18 @@ import { getDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../../FireBaseConfig/Firebase'
 import { doc } from 'firebase/firestore'
+import { updateDoc } from 'firebase/firestore'
 import "./MyReports.css"
 import LoginPage from '../../../Pages/LoginPage/LoginPage'
 import { Button } from 'react-bootstrap'
+
 const MyReports = () => {
     const [Reports,SetFoundReports]=useState([])
     const [Lostreports,setLostReports]=useState([])
 const UserDetails=JSON.parse(localStorage.getItem("reactProjectUsers"))
-const User=UserDetails.user.displayName
+const User=UserDetails.displayName
+console.log(User);
+
     useEffect(()=>{
        const  reportsFetching= async()=>{
 
@@ -17,9 +21,15 @@ const User=UserDetails.user.displayName
 const docRef=doc(db,"users",User)
 
 const DataFromFb=await getDoc(docRef)
-console.log(DataFromFb.data().WholeItems)
+// console.log(DataFromFb.data().WholeItems)
 SetFoundReports(DataFromFb.data().WholeItems)
-setLostReports(DataFromFb.data().LostItems)
+
+const LostdocRef=doc(db,"FoundUsers",User)
+
+const LostDataFromFb=await getDoc(LostdocRef)
+console.log(DataFromFb.data().FoundItems)
+setLostReports(LostDataFromFb.data().FoundItems)
+// setLostReports(DataFromFb.data().LostItems)
 
 
 
@@ -27,18 +37,50 @@ setLostReports(DataFromFb.data().LostItems)
        }
        reportsFetching()
     },[])
+// console.log(Lostreports);
+// console.log(Reports);
+
+
+
+const handleDelete=async(_,indexChoosed)=>{
+console.log(indexChoosed);
+
+const LostItemsAfterDelete=Reports.filter((_,index)=> index !== indexChoosed)
+// console.log(FoundItemsAfterDelete)
+const docRef=  doc(db,"users",User)
+await updateDoc(docRef,{
+  WholeItems:LostItemsAfterDelete
+})
+   SetFoundReports(LostItemsAfterDelete) 
+   alert("Item Deleted")
+console.log(Reports)
+
+}
+const handleFoundDelete= async(_,indexChoosed)=>{
+  
+const FoundItemsAfterDelete=Lostreports.filter((_,index)=> index !== indexChoosed)
+// console.log(FoundItemsAfterDelete)
+const docRef=  doc(db,"FoundUsers",User)
+await updateDoc(docRef,{
+  FoundItems:FoundItemsAfterDelete
+})
+   setLostReports(FoundItemsAfterDelete) 
+   alert("Item Deleted")
+// console.log(Reports)
+
+}
 console.log(Lostreports);
-console.log(Reports);
 
 
   return (
     
     <div>
-       <h1>FoundItems</h1>
+      {Reports?<div>
+ <h1>FoundItems</h1>
       <div style={{margin:"5%", display:"flex", gap:"10px"}}>
-{Reports.map((x, index) => (
-  <div key={index}  className="report-card">
-    <h4>{x.itemname}</h4>
+     {Reports.map((x, index) => (
+     <div key={index}  className="report-card">
+     <h4>{x.itemname}</h4>
     <p><strong>Brand:</strong> {x.brand}</p>
     <p><strong>Category:</strong> {x.category}</p>
     <p><strong>Color:</strong> {x.color}</p>
@@ -46,8 +88,8 @@ console.log(Reports);
     <p><strong>Contact Phone:</strong> {x.contactPhone}</p>
     <p><strong>Email:</strong> {x.email}</p>
     <p><strong>Date Lost:</strong> {x.dateLost}</p>
-     <Button>Delete</Button> <br />
-        <Button>Edit</Button>
+     <Button onClick={()=>handleDelete(x,index)}  variant='danger'>Delete</Button> 
+        <Button style={{marginLeft:"40%"}}>Edit</Button>
     {/* <p><strong>Time Lost:</strong> {x.timeLost}</p>
     <p><strong>Location:</strong> {x.location}</p>
     <p><strong>Place Lost Details:</strong> {x.placeLostDetails}</p>
@@ -65,7 +107,8 @@ console.log(Reports);
 <div>
       <h1>Lost-Items</h1>
 <div className="lost-reports-container">
-  
+  {console.log(Lostreports)
+  }
   {Lostreports.map((x, index) => (
   
     <div className="lost-card" key={index}>
@@ -81,13 +124,15 @@ console.log(Reports);
         <p><strong>Date Lost:</strong> {x.dateLost}</p>
         <p><strong>Contact Email:</strong> {x.email}</p>
         <p><strong>Phone:</strong> {x.contactPhone}</p>
-        <Button>Delete</Button> <br />
+        <Button variant='danger'  onClick={()=>handleFoundDelete(x,index)}>Delete</Button> 
         <Button>Edit</Button>
       </div>
     </div>
   ))}
 </div>
 </div>
+
+      </div>:<h1>You havent posted any items yet</h1>}
     </div>
   )
 }

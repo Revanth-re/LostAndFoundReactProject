@@ -3,7 +3,7 @@ import { Button, Modal, Row, Col, Form } from 'react-bootstrap';
 import { collection, getDocs, doc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { db } from '../../FireBaseConfig/Firebase';
 import "./LostItemClaimForm.css";
-
+import { toast } from 'react-toastify';
 const LostItemClaimForm = () => {
   const [userDocId, setUserDocId] = useState("");
   const [open, setOpen] = useState(false);
@@ -17,30 +17,45 @@ const LostItemClaimForm = () => {
 
   useEffect(() => {
     const fetchUserDocId = async () => {
-      const storedData = localStorage.getItem("ClaimLosts");
+      const storedData = JSON.parse(localStorage.getItem("ClaimFounds"))
      
 
-      const parsedData = JSON.parse(storedData);
+    
       // if (!parsedData || !parsedData[0]?.email) return;
+// console.log(parsedData)
+console.log(storedData);
 
-      const userEmail = parsedData[0].email;
-
-      const snapshot = await getDocs(collection(db, "FoundUsers"))
-      // console.log(snapshot);
+      const userEmail=storedData.email
+      console.log(userEmail);
+      
+      // const userEmail = parsedData[0].email;
+// console.log(userEmail);
+      
+      const snapshot = await getDocs(collection(db, "users"))
+      console.log(snapshot);
       
       snapshot.forEach((docSnap) => {
-        const userItems = docSnap.data().FoundItems || [];
-        console.log(docSnap.data().FoundItems)
+      
+          console.log(docSnap.data())
+        const userItems = docSnap.data().WholeItems || [];
+      
         
-        const foundItem = userItems.find((item) => item.email === userEmail );
-        console.log(foundItem);
-        if (foundItem) {
-          
-          
-          setUserDocId(docSnap.id);
-          console.log(docSnap.id); // Correct document ID
+        const LostItems=userItems.find((x)=>x.email === userEmail)
+        console.log(LostItems);
+        if(LostItems){
+          setUserDocId(docSnap.data().name)
         }
+        
+        // const foundItem = userItems.find((item) => console.log(item));
+        // console.log(foundItem);
+        // if (foundItem) {
+          
+          
+        //   setUserDocId(docSnap.name);
+        //   // console.log(docSnap.id); // Correct document ID
+        // }
         // console.log(docSnap.id);
+        // console.log(userItems);
         
       });
     };
@@ -62,7 +77,7 @@ const LostItemClaimForm = () => {
         return;
       }
 
-      const docRef = doc(db, "FoundUsers",userDocId );
+      const docRef = doc(db, "users",userDocId )
 
       await updateDoc(docRef, {
         Data: arrayUnion(claim)
@@ -76,7 +91,7 @@ const LostItemClaimForm = () => {
         image: "",
       });
 
-      alert("Verification details submitted successfully.");
+    toast.success("Verification Successfull")
       handleClose();
     } catch (error) {
       console.error("Error submitting claim:", error);

@@ -5,7 +5,7 @@ import { db } from '../../FireBaseConfig/Firebase';
 import { useNavigate } from 'react-router-dom';
 import { useState} from 'react';
 import './LostItems.css'; // You can copy and reuse FoundItems.css as LostItems.css
-
+ import { toast } from 'react-toastify';
 const LostItems = () => {
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const LostItems = () => {
   const [lostOpen, setLostOpen] = useState(false);
 
   const DatafromLs = JSON.parse(localStorage.getItem("reactProjectUsers"));
-  const userdetails = DatafromLs?.user?.displayName;
+  const userdetails = DatafromLs.displayName;
 
   const handleLostOpen = () => setLostOpen(true);
   const handleLostClose = () => setLostOpen(false);
@@ -40,7 +40,8 @@ const LostItems = () => {
       await updateDoc(userDocRef, {
         WholeItems: arrayUnion(lostItems),
       });
-      alert("Lost item reported successfully.");
+    toast.success("Lost Item Reported Successufully")
+
       handleLostClose();
     } catch (err) {
       console.error("Error reporting lost item:", err);
@@ -83,11 +84,23 @@ const LostItems = () => {
                 />
               </Col>
               <Col md={6}>
-                <Form.Control
+               <Form.Select
                   onChange={(e) => setLostItems({ ...lostItems, category: e.target.value })}
-                  type="text"
-                  placeholder="Category"
-                />
+                  required
+                >
+                  <option value="">Select Category</option>
+                  <option value="Mobiles">electronics</option>
+                  <option value="accessories">accessories</option>
+                  <option value="Documents">Documents</option>
+                  <option value="Wallets">Wallets</option>
+                  <option value="Bags">Bags</option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="Earbuds">EarBuds</option>
+                  <option value="otherItems">OtherItems</option>
+                  <option value="Books">Books</option>
+
+                </Form.Select>
               </Col>
             </Row>
 
@@ -117,15 +130,12 @@ const LostItems = () => {
                 />
               </Col>
               <Col md={6}>
-                <Form.Select
+                <Form.Control
                   onChange={(e) => setLostItems({ ...lostItems, location: e.target.value })}
                   required
                 >
-                  <option value="">Select Location</option>
-                  <option>Hyderabad</option>
-                  <option>Karimnagar</option>
-                  <option>Warangal</option>
-                </Form.Select>
+                 
+                </Form.Control>
               </Col>
             </Row>
 

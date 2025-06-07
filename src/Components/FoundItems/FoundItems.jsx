@@ -5,6 +5,7 @@ import { arrayUnion,doc,updateDoc } from 'firebase/firestore';
  import { db } from '../../FireBaseConfig/Firebase';
  import { useNavigate } from 'react-router-dom';
  import "./FoundItems.css"
+ import { toast } from 'react-toastify';
 // import { useNavigate } from 'react-router-dom';
 const FoundItems = () => {
     let navigate=useNavigate()
@@ -28,7 +29,7 @@ const FoundItems = () => {
       console.log(DatafromLs)
 
       
-      const userdetails = DatafromLs.user.displayName;
+      const userdetails = DatafromLs.displayName;
       console.log(userdetails);
       const handleFoundOpen = () => setFoundOpen(true)
       const handleFoundClose = () => setFoundOpen(false);
@@ -48,7 +49,7 @@ const FoundItems = () => {
           await updateDoc(RecruiterDocRef, {
             FoundItems: arrayUnion(FoundItems),
           });
-          alert("Found item posted");
+          toast.success("Found item Reported successfully");
           handleFoundClose();
         } catch (err) {
           console.error("Error posting found item:", err);

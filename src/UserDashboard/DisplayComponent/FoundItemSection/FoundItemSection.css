@@ -1,0 +1,50 @@
+.scroll-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.scroll-title {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.scroll-buttons {
+  /* display: flex; */
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.scroll-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-buttons::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.scroll-buttons::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.scroll-buttons button {
+  /* flex-shrink: 0; */
+  border: 1px solid white;
+  background-color: white;
+}
+.scroll-buttons button:hover {
+  /* flex-shrink: 0; */
+  border: 1px solid rgb(198, 175, 175);
+  background-color: rgb(181, 216, 204);
+}
+
+
+#img{
+
+height: 100px;
+width: 100px;
+border-radius: 10px;
+}
