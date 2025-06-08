@@ -60,21 +60,16 @@ setDataState(ProvidedData.data().Data)
 {OpenState?<Button onClick={()=>navigate(-1)}>Back</Button>
 :        <Navbar.Brand as={Link} to="/"><img src={Logo} style={{width:"50px",height:"50px"}}></img></Navbar.Brand>
 }
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle id='NavbarToggle' aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           {UserFromLS ? (
             
-            <Nav className="ms-auto linksDiv">
-            {/* //   <Nav.Link as={Link} to="/HelpPage">Help</Nav.Link>
-            //   <Nav.Link as={Link} to="/ContactPage">Contact</Nav.Link>
-            //   <Nav.Link as={Link} to="/FoundItems">ReportFoundItems</Nav.Link>
-            //   <Nav.Link as={Link} to="/LostItems">ReportLostItems</Nav.Link>
-          //  <Nav.Link as={Link} to="/UserProvidedFound">Notifications <Badge bg="secondary">{state.length}</Badge></Nav.Link> */}
-          <Nav.Link as={Link} to="/MyProfile"> < RxAvatar style={{fontSize:"2rem",color:"white"}}/></Nav.Link>
-              {/* <Button onClick={handleLogout}>Logout</Button> */}
+            <Nav id='ToggleLinks' className="ms-auto linksDiv">
+             <Nav.Link as={Link} to="/MyProfile"> < RxAvatar style={{fontSize:"2rem",color:"white"}}/></Nav.Link>
+             
             </Nav>
           ) : (
-            <Nav className="ms-auto">
+            <Nav id='ToggleLinks' className="ms-auto">
               <Nav.Link style={{color:'white'}} as={Link} to="/signup">Signup</Nav.Link>
               <Nav.Link style={{color:'white'}} as={Link} to="/loginPage">Login</Nav.Link>
             </Nav>

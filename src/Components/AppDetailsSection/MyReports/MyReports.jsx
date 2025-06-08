@@ -103,7 +103,7 @@ console.log(Lostreports);
         <h1 className="section-heading">🔍 Lost Items</h1>
         <div className="my-reports-section">
           {Lostreports.map((x, index) => (
-            <div key={index} className="lost-card">
+            // <div key={index} className="lost-card">
               <div className="report-card">
                 <h4 className="item-name">{x.itemname}</h4>
                 <p><strong>Brand:</strong> {x.brand}</p>
@@ -119,7 +119,7 @@ console.log(Lostreports);
                   <Button style={{ backgroundColor: "#053B50" }}>Edit</Button>
                 </div>
               </div>
-            </div>
+            // </div>
           ))}
         </div>
       </>

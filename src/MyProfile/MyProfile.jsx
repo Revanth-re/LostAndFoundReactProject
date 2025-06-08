@@ -159,13 +159,13 @@ const MyProfile = () => {
       <div className="profile-info">
         <p><strong>Name:</strong> {userData.displayName || "Not available"}</p>
         <p><strong>Email:</strong> {userData.email || "Not available"}</p>
-        <p><strong>UID:</strong> {userData.uid || "Not available"}</p>
+      
       </div>
 
-      <Button style={{ width: "10vw", marginBottom: "5px" }} variant="danger" onClick={handleLogout}>
+      <Button id="Button" variant="danger" onClick={handleLogout}>
         Logout
       </Button> <br />
-      <Button style={{ width: "10vw" }} variant="success" onClick={() => navigate(-1)}>
+      <Button id="Button" variant="success" onClick={() => navigate(-1)}>
         Back
       </Button>
     </div>

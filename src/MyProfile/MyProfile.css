@@ -29,3 +29,14 @@
   font-size: 1.1rem;
   margin: 8px 0;
 }
+#Button{
+  width: 15vw;
+  margin-top: 1%;
+}
+@media (max-width:768px) {
+  #Button{
+  width: 20vw;
+  margin-top: 1%;
+}
+
+}

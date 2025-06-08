@@ -1,11 +1,12 @@
 .banner-wrapper {
     background-color: rgb(188, 186, 186);
-  width: 100%;
+  width: 90%;
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 2%;
   
 }
 
@@ -30,6 +31,9 @@
 @media (max-width: 768px) {
   .carousel-image {
     max-height: 50vh;
+  }
+  .banner-wrapper {
+    width: 95vw;
   }
 }
 

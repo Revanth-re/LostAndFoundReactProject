@@ -1,11 +1,8 @@
 .scroll-container {
-  /* margin-top: 5%; */
-  /* margin-bottom: 10%; */
   padding: 10px;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 20px;
-  /* border: 1px solid; */
 }
 
 .scroll-title {
@@ -14,13 +11,12 @@
 }
 
 .scroll-buttons {
-  /* display: flex; */
-  /* border: 1px solid; */
-  border-radius: 5px;
+  display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
-  white-space: nowrap;
   gap: 10px;
   padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .scroll-buttons::-webkit-scrollbar {
@@ -31,73 +27,196 @@
   background-color: #ccc;
   border-radius: 10px;
 }
-.scroll-buttons::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+
+.scroll-buttons::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .scroll-buttons button {
-  /* flex-shrink: 0; */
-  border: 1px solid white;
-  background-color: rgb(25, 24, 24);
+  flex: 0 0 auto; /* Prevent shrinking/growing */
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f8f8f8;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
 }
+
 .scroll-buttons button:hover {
-  /* flex-shrink: 0; */
-  border: 1px solid rgb(198, 175, 175);
-  background-color: rgb(181, 216, 204);
+  border: 1px solid #bbb;
+  background-color: #e0e0e0;
 }
 
-
-#img{
-
-height: 100px;
-width: 100px;
-border-radius: 10px;
-}
-#All{
-background-color:black;
-height:20vh;
-/* height:20vh; */
- width:8vw;
-color:white
+#All {
+  background-color: black;
+  color: white;
+  min-width: 120px;
 }
 
-@media (max-width:768px) {
- .scroll-container{
-  margin-top: 5%;
-  margin-bottom: -30%;
-
- } 
-  #img{
-
-height: 70px;
-width: 70px;
-border-radius: 10px;
-}
-.scroll-buttons {
-  /* border: 1px solid; */
-padding: 5%;
-/* padding-bottom: -200%; */
-margin-bottom: 20%;
-/* background-color: red; */
-
+#img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
 }
 
-#All{
-background-color:black;
-height:10vh ;
-/* height:20vh; */
- width:15vw;
-color:white
+@media (max-width: 768px) {
+  .scroll-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  #img {
+    height: 70px;
+    width: 70px;
+  }
+  
+  .scroll-buttons {
+    padding: 5px;
+    gap: 8px;
+  }
+  
+  .scroll-buttons button {
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  
+  #All {
+    min-width: 100px;
+  }
+  
+  #catText {
+    font-size: 1.2rem;
+  }
 }
-#catText{
+.scroll-buttons div Button img{
+    width: 80px;
+  height: 80px;
+  /* height: 15vh;
+  width: 5vw; */
+/* background-color: aquamarine; */
+}
+.scroll-buttons div Button{
+  background-color: white rgb(255, 212, 212);
+}
+.scroll-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.scroll-title {
+  margin-bottom: 10px;
+  font-weight: 500;
   font-size: 1.2rem;
-  /* margin-left:20% ; */
-}
-.scroll-buttons div {
-  border: 1px solid;
-padding:5px;
-border-radius: 5px;
-
+  color: #333;
 }
 
+.scroll-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.scroll-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-buttons::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.scroll-buttons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-buttons button {
+  flex: 0 0 auto;
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f8f8f8;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+.scroll-buttons button:hover {
+  border-color: #bbb;
+  background-color: #e0e0e0;
+}
+
+#All {
+  background-color: black;
+  color: white;
+  min-width: 120px;
+}
+
+#img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Button with Image */
+.scroll-buttons div button img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Fix malformed background color */
+.scroll-buttons div button {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .scroll-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .scroll-buttons {
+    padding: 5px;
+    gap: 8px;
+  }
+
+  .scroll-buttons button {
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  #All {
+    min-width: 100px;
+  }
+
+  #catText {
+    font-size: 1.1rem;
+  }
+
+  .scroll-buttons div button img {
+    width: 60px;
+    height: 60px;
+  }
 }

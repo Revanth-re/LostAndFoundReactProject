@@ -96,7 +96,8 @@ alert("User Rejected")
   return (
    <div className="user-provided-wrapper">
   <div className="user-grid">
-    {ProvidedData.map((x, index) => (
+    {ProvidedData?<div>
+      {ProvidedData.map((x, index) => (
       <div className="profile-card" key={index}>
         <h1>{x.email}</h1>
         <h2>{x.Fullname}</h2>
@@ -119,7 +120,12 @@ alert("User Rejected")
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}
-  </div>
+
+    </div>:
+    <div>
+      <h1>No notifications Yet</h1>
+      </div>}
+      </div>
 </div>
 
   )
