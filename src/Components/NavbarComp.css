@@ -56,12 +56,13 @@
 
 .custom-navbar {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-background-color:#EFEEEA;
+background-color:#023446;
   padding: 10px 40px !important;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1030;
+  border-bottom:2px solid #ff700b;
 }
 
 .custom-navbar a {
@@ -113,4 +114,7 @@ background-color:#EFEEEA;
     margin-top: 10px;
     margin-left: 0;
   }
+}
+img{
+  border-radius: 50px;
 }

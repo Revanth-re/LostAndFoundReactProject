@@ -6,6 +6,7 @@ import {Badge} from 'react-bootstrap';
 import { doc,getDoc } from 'firebase/firestore';
 import { db } from '../FireBaseConfig/Firebase';
 import { RxAvatar } from "react-icons/rx";
+import Logo from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
 const NavbarComp = ({OpenState}) => {
 console.log(OpenState)
 
@@ -57,7 +58,7 @@ setDataState(ProvidedData.data().Data)
     <Navbar className="custom-navbar" expand="lg" collapseOnSelect sticky="top">
       <Container fluid>
 {OpenState?<Button onClick={()=>navigate(-1)}>Back</Button>
-:        <Navbar.Brand as={Link} to="/">App</Navbar.Brand>
+:        <Navbar.Brand as={Link} to="/"><img src={Logo} style={{width:"50px",height:"50px"}}></img></Navbar.Brand>
 }
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -69,13 +70,13 @@ setDataState(ProvidedData.data().Data)
             //   <Nav.Link as={Link} to="/FoundItems">ReportFoundItems</Nav.Link>
             //   <Nav.Link as={Link} to="/LostItems">ReportLostItems</Nav.Link>
           //  <Nav.Link as={Link} to="/UserProvidedFound">Notifications <Badge bg="secondary">{state.length}</Badge></Nav.Link> */}
-          <Nav.Link as={Link} to="/MyProfile"> < RxAvatar style={{fontSize:"2rem"}}/></Nav.Link>
+          <Nav.Link as={Link} to="/MyProfile"> < RxAvatar style={{fontSize:"2rem",color:"white"}}/></Nav.Link>
               {/* <Button onClick={handleLogout}>Logout</Button> */}
             </Nav>
           ) : (
             <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
-              <Nav.Link as={Link} to="/loginPage">Login</Nav.Link>
+              <Nav.Link style={{color:'white'}} as={Link} to="/signup">Signup</Nav.Link>
+              <Nav.Link style={{color:'white'}} as={Link} to="/loginPage">Login</Nav.Link>
             </Nav>
           )}
         </Navbar.Collapse>

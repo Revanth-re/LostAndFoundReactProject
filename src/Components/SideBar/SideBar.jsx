@@ -89,9 +89,14 @@ import { Button, Form } from 'react-bootstrap';
 import './SideBar.css';
 import { useNavigate } from 'react-router-dom';
 import { FaToggleOn } from "react-icons/fa";
+import { MdHelp } from "react-icons/md";
+import { IoIosNotifications } from "react-icons/io";
+
 import {Link}  from "react-router-dom"
 import{ Nav,Badge} from 'react-bootstrap';
-import { FaToggleOff } from "react-icons/fa6";
+import { FaToggleOff,FaSquarePhone } from "react-icons/fa6";
+import { SiGoogledocs } from "react-icons/si";
+import { BsPencilSquare } from "react-icons/bs";
 
 const SideBar = ({ setCategoryValue, setCatSection, setFilData,state }) => {
   const [open, setOpen] = useState(true);
@@ -124,20 +129,35 @@ const SideBar = ({ setCategoryValue, setCatSection, setFilData,state }) => {
   return (
     <div className="sidebar">
   <div className="sidebar-buttons">
-    <Button onClick={() => navigate("/FoundItems")} className="sidebar-btn">
-      Found Item Report
-    </Button>
-    <Button style={{backgroundColor:"#053B50"}} onClick={() => navigate("/LostItems")} className="sidebar-btn">
-      Lost Item Report
-    </Button>
+    <Button id='Button' onClick={() => navigate("/FoundItems")} className="sidebar-btn">
+     <span id='text'>Found Item Report</span>  <span id='span2'>Found</span>
+    </Button><Button id='Button' style={{backgroundColor:"#053B50"}} onClick={() => navigate("/LostItems")} className="sidebar-btn">
+       <span id='text'>Lost Item Report</span>  <span id='span2'>Lost</span>
+
+  </Button>
   </div>
 
-  <div className="sidebar-links">
-    <Nav.Link as={Link} to="/HelpPage">Help</Nav.Link>
-    <Nav.Link as={Link} to="/ContactPage">Contact</Nav.Link>
-    <Nav.Link as={Link} to="/UserProvidedFound">Notifications <Badge>{state.length}</Badge> </Nav.Link>
-    <Nav.Link as={Link} to="/MyReports">My Reports</Nav.Link>
-     <Nav.Link as={Link} to="/MyReview">Write-A-review</Nav.Link>
+  <div className="sidebar-links" style={{position:"relative"}}>
+    <Nav.Link as={Link} to="/HelpPage"><span id='text'>Help</span> <span id='span'> <MdHelp/>
+      </span></Nav.Link><Nav.Link as={Link} to="/ContactPage"><span id='text'>Contact</span> <span id='span'> <FaSquarePhone/>
+      </span></Nav.Link><Nav.Link as={Link} to="/UserProvidedFound"><span id='text'>Notifications  <Badge bg='warning' color='dark' >{state.length}</Badge></span> <span id='span'> <IoIosNotifications/>   <Badge
+    bg="dark"
+    style={{
+      position: "absolute",
+      top: 50,
+      right: 150,
+      // bottom:50,
+      transform: "translate(50%, -50%)",
+      borderRadius: "50%",
+      padding: "0.3em 0.5em",
+      fontSize: "0.80rem"
+    }}
+  >
+    {state.length}
+  </Badge>
+  </span>  </Nav.Link>
+    <Nav.Link as={Link} to="/MyReports"> <span id='text'>MyReports</span> <span id='span'><SiGoogledocs/></span></Nav.Link>
+     <Nav.Link as={Link} to="/MyReview"><span id='text'>Write A Review</span><span id='span'><BsPencilSquare/></span></Nav.Link>
   </div>
 </div>
 

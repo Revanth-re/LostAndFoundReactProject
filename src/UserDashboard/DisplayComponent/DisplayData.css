@@ -1,5 +1,5 @@
 .scroll-container {
-  width: 70vw;
+  width: 75vw;
   /* border: 2px solid; */
   overflow-x: auto;
   padding: 10px 0;
@@ -150,11 +150,27 @@
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
+#btn1{
+  width: 15vw;
+  margin-bottom:2% ;
+    background-color:#053B50;
+
+  font-size:0.9rem
+  
+
+
+}
+#btn2{
+  width: 15vw;
+    font-size:0.9rem;
+
+background-color:#FF8225
+}
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .card {
-    min-width: 200px;
+    /* min-width: 200px; */
   }
 }
 .card Button{
@@ -163,4 +179,96 @@
 
 #BtnSec2{
   
+}
+@media (max-width: 768px) {
+  .scroll-cards {
+    gap: 10px;
+    padding-left: 10px;
+  }
+
+  .card {
+    min-width: 48vw; /* Each card takes ~half the screen width */
+    max-width: 48vw;
+    flex-shrink: 0;
+  }
+
+  .card img {
+    height: 90px; /* Smaller image for mobile */
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-container {
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;   /* Enable vertical scroll */
+  }
+
+  .scroll-cards {
+    margin-top: -1%;
+    margin-bottom: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 16px;
+    padding: 0 10px;
+    flex-wrap: nowrap; /* no horizontal scroll */
+  }
+
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .card img {
+    height: 100px;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+  .scroll-container{
+    width: 99vw;
+    font-size: 0.5rem;
+    /* margin-top: 1%; */
+  }
+  #img{
+    height: 5vh;
+    width: 2vh;
+  }
+  #btn1{
+  width: 35vw;
+  margin-bottom:2% ;
+    background-color:#053B50;
+
+  font-size:0.9rem
+  
+
+
+}
+#btn2{
+  width: 35vw;
+    font-size:0.9rem;
+
+background-color:#FF8225
+}
 }

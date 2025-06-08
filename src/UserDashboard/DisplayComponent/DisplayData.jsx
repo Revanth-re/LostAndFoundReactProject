@@ -468,7 +468,7 @@ return(
    </div>
  {/* <h2 style={{ textAlign: "center", marginBottom: "10px" }}>Lost-Item</h2> */}
 
-<div  className="scroll-container">
+<div  className="scroll-container" style={{marginBottom:"10%"}}>
  
   <div className="scroll-cards">
     {oneFilteredData.map((item, i) => (
@@ -480,7 +480,8 @@ return(
           <p>{item.brand}</p> 
          
           <div className="reward">Contact:{item.contactPhone}</div>
-          <Button style={{fontSize:"0.9rem"}}  onClick={() => handleLost(item)}>I-Found-It</Button> <Button style={{fontSize:"0.9rem",backgroundColor:"#FF8225"}}  onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
+          <Button id='btn1'   onClick={() => handleLost(item)}>I-Found-It</Button>
+           <Button id='btn2'   onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
 
         </div>
       </div>
@@ -490,13 +491,13 @@ return(
   
 
 {/* <h2 style={{ textAlign: "center", marginBottom: "10px", marginTop: "40px" }}>Found-Items</h2> */}
- <div style={{margin:"10% 0% 10% 0%"}}>
+ <div style={{margin:"5% 0% 10% 0%",marginTop:"2%"}}>
 
     <LostItemsSection  setCatSection={setCatSection} setFilData={setFilData}  />
 
  </div>
 
-<div  className="scroll-container" >
+<div  className="scroll-container" style={{marginBottom:"5%"}} >
   <div className="scroll-cards">
     {twoFilteredData.map((item, i) => (
       <div className="card" key={i}>
@@ -507,8 +508,8 @@ return(
           {/* <p>{item.description}</p> */}
           <p>Brand:{item.brand}</p>
           <div className="reward">{item.price}</div>
-          <Button style={{fontSize:"0.9rem"}}  onClick={()=>handleFound(item)}>I-Found-It</Button>
-          <Button style={{fontSize:"0.9rem",marginLeft:"5px",backgroundColor:"#FF8225"}}   onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
+          <Button id='btn1'  onClick={()=>handleFound(item)}>I-Found-It</Button>
+          <Button  id='btn2'  onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
         </div>
       </div>
     ))}
@@ -521,6 +522,7 @@ return(
 
   
  </div>
+
    <Banner></Banner>
  <div>
   <div className="my-5" style={{margin:"4%"}} >
@@ -549,7 +551,7 @@ return(
           </Col>
         ))}
       </Row>
-      <div style={{marginTop:"5%"}}>
+      <div style={{marginTop:"5%",marginBottom:"10%"}}>
       <Footer></Footer>
 
 

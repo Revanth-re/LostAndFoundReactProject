@@ -31,9 +31,9 @@ const Footer = () => {
           <Col md={4}>
             <h5 className="text-uppercase text-dark mb-3">Follow Us</h5>
             <div className="d-flex gap-3">
-              <a href="#" className="text-light fs-4"><FaWhatsapp/></a>
-              <a href="#" className="text-light fs-4"><FaInstagram/></a>
-              <a href="#" className="text-light fs-4"><FaThreads /></a>
+              <a href="#" className="text-dark fs-4"><FaWhatsapp/></a>
+              <a href="#" className="text-dark fs-4"><FaInstagram/></a>
+              <a href="#" className="text-dark fs-4"><FaThreads /></a>
             </div>
           </Col>
         </Row>

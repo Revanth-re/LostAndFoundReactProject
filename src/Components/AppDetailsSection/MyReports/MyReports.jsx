@@ -75,64 +75,60 @@ console.log(Lostreports);
   return (
     
     <div>
-      {Reports?<div>
- <h1>FoundItems</h1>
-      <div style={{margin:"5%", display:"flex", gap:"10px"}}>
-     {Reports.map((x, index) => (
-     <div key={index}  className="report-card">
-     <h4>{x.itemname}</h4>
-    <p><strong>Brand:</strong> {x.brand}</p>
-    <p><strong>Category:</strong> {x.category}</p>
-    <p><strong>Color:</strong> {x.color}</p>
-    <p><strong>Approximate Value:</strong> {x.approximateValue}</p>
-    <p><strong>Contact Phone:</strong> {x.contactPhone}</p>
-    <p><strong>Email:</strong> {x.email}</p>
-    <p><strong>Date Lost:</strong> {x.dateLost}</p>
-     <Button onClick={()=>handleDelete(x,index)}  variant='danger'>Delete</Button> 
-        <Button style={{marginLeft:"40%"}}>Edit</Button>
-    {/* <p><strong>Time Lost:</strong> {x.timeLost}</p>
-    <p><strong>Location:</strong> {x.location}</p>
-    <p><strong>Place Lost Details:</strong> {x.placeLostDetails}</p>
-    <p><strong>Description:</strong> {x.description}</p>
-    <p><strong>Distinct Features:</strong> {x.distinctFeatures}</p>
-    <p><strong>ID Proof:</strong> {x.idProof}</p>
-    <p><strong>Model Number:</strong> {x.modelNumber}</p>
-    <p><strong>Reward:</strong> {x.reward ? "Yes" : "No"}</p> */}
-    <hr />
-  </div>
-))}
 
-      </div>
-
-<div>
-      <h1>Lost-Items</h1>
-<div className="lost-reports-container">
-  {console.log(Lostreports)
-  }
-  {Lostreports.map((x, index) => (
-  
-    <div className="lost-card" key={index}>
     
-      {/* <img src={x.imageURL} alt={x.itemname} className="lost-image" /> */}
-      <div className="report-card">
-        <h4>{x.itemname}</h4>
-        <p><strong>Brand:</strong> {x.brand}</p>
-        <p><strong>Category:</strong> {x.category}</p>
-        <p><strong>Color:</strong> {x.color}</p>
-        <p><strong>Description:</strong> {x.description}</p>
-        <p><strong>Distinct Features:</strong> {x.distinctFeatures}</p>
-        <p><strong>Date Lost:</strong> {x.dateLost}</p>
-        <p><strong>Contact Email:</strong> {x.email}</p>
-        <p><strong>Phone:</strong> {x.contactPhone}</p>
-        <Button variant='danger'  onClick={()=>handleFoundDelete(x,index)}>Delete</Button> 
-        <Button>Edit</Button>
-      </div>
-    </div>
-  ))}
-</div>
-</div>
+  <div className="my-reports-wrapper">
+    {Reports && Reports.length > 0 ? (
+      <>
+        <h1 className="section-heading">📦 Found Items</h1>
+        <div className="my-reports-section">
+          {Reports.map((x, index) => (
+            <div key={index} className="report-card">
+              <h4 className="item-name">{x.itemname}</h4>
+              <p><strong>Brand:</strong> {x.brand}</p>
+              <p><strong>Category:</strong> {x.category}</p>
+              <p><strong>Color:</strong> {x.color}</p>
+              <p><strong>Approx. Value:</strong> {x.approximateValue}</p>
+              <p><strong>Contact:</strong> {x.contactPhone}</p>
+              <p><strong>Email:</strong> {x.email}</p>
+              <p><strong>Date Lost:</strong> {x.dateLost}</p>
+              <div className="button-group">
+                <Button variant="danger" onClick={() => handleDelete(x, index)}>Delete</Button>
+                <Button style={{ backgroundColor: "#053B50" }}>Edit</Button>
+              </div>
+            </div>
+          ))}
+        </div>
 
-      </div>:<h1>You havent posted any items yet</h1>}
+        <h1 className="section-heading">🔍 Lost Items</h1>
+        <div className="my-reports-section">
+          {Lostreports.map((x, index) => (
+            <div key={index} className="lost-card">
+              <div className="report-card">
+                <h4 className="item-name">{x.itemname}</h4>
+                <p><strong>Brand:</strong> {x.brand}</p>
+                <p><strong>Category:</strong> {x.category}</p>
+                <p><strong>Color:</strong> {x.color}</p>
+                <p><strong>Description:</strong> {x.description}</p>
+                <p><strong>Features:</strong> {x.distinctFeatures}</p>
+                <p><strong>Date:</strong> {x.dateLost}</p>
+                <p><strong>Email:</strong> {x.email}</p>
+                <p><strong>Phone:</strong> {x.contactPhone}</p>
+                <div className="button-group">
+                  <Button variant="danger" onClick={() => handleFoundDelete(x, index)}>Delete</Button>
+                  <Button style={{ backgroundColor: "#053B50" }}>Edit</Button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    ) : (
+      <h2 style={{ textAlign: "center", marginTop: "3rem" }}>❗ You haven’t posted any items yet.</h2>
+    )}
+  </div>
+
+
     </div>
   )
 }

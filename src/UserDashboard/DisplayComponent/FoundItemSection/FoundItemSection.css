@@ -1,8 +1,11 @@
 .scroll-container {
+  /* margin-top: 5%; */
+  /* margin-bottom: 10%; */
   padding: 10px;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 20px;
+  /* border: 1px solid; */
 }
 
 .scroll-title {
@@ -12,6 +15,8 @@
 
 .scroll-buttons {
   /* display: flex; */
+  /* border: 1px solid; */
+  border-radius: 5px;
   overflow-x: auto;
   white-space: nowrap;
   gap: 10px;
@@ -33,7 +38,7 @@
 .scroll-buttons button {
   /* flex-shrink: 0; */
   border: 1px solid white;
-  background-color: white;
+  background-color: rgb(25, 24, 24);
 }
 .scroll-buttons button:hover {
   /* flex-shrink: 0; */
@@ -47,4 +52,52 @@
 height: 100px;
 width: 100px;
 border-radius: 10px;
+}
+#All{
+background-color:black;
+height:20vh;
+/* height:20vh; */
+ width:8vw;
+color:white
+}
+
+@media (max-width:768px) {
+ .scroll-container{
+  margin-top: 5%;
+  margin-bottom: -30%;
+
+ } 
+  #img{
+
+height: 70px;
+width: 70px;
+border-radius: 10px;
+}
+.scroll-buttons {
+  /* border: 1px solid; */
+padding: 5%;
+/* padding-bottom: -200%; */
+margin-bottom: 20%;
+/* background-color: red; */
+
+}
+
+#All{
+background-color:black;
+height:10vh ;
+/* height:20vh; */
+ width:15vw;
+color:white
+}
+#catText{
+  font-size: 1.2rem;
+  /* margin-left:20% ; */
+}
+.scroll-buttons div {
+  border: 1px solid;
+padding:5px;
+border-radius: 5px;
+
+}
+
 }

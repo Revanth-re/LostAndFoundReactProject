@@ -7,6 +7,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import {Badge} from "react-bootstrap"
 import LoginPage from '../Pages/LoginPage/LoginPage';
+import myImage from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
 const UserProvidedFound = () => {
     const [ProvidedData,setProvidedData]=useState([])
     const [FoundProvData,setFoundProvData]=useState([])
@@ -93,47 +94,34 @@ alert("User Rejected")
  console.log(FoundProvData)
  
   return (
-   
-   <div style={{display:"grid",gridTemplateColumns:"repeat(3,auto)", margin:"2px" }} >
-   {ProvidedData?<div>{ProvidedData.map((x,index)=>{
-      return(
-        <div className="profile-card">
+   <div className="user-provided-wrapper">
+  <div className="user-grid">
+    {ProvidedData.map((x, index) => (
+      <div className="profile-card" key={index}>
         <h1>{x.email}</h1>
         <h2>{x.Fullname}</h2>
         <h3>{x.Contact}</h3>
-        <Button><a  style={{color:"black"}} href={`tel:${x.Contact}`} target='_blank'>Call him</a></Button>
-    
-      {/* <Button style={{marginRight:"8px"}} >MessageHim</Button>  */}
-    <Button style={{marginLeft:"5px", marginRight:'5px'}}> <a style={{color:"black"}} href={`https://wa.me/${x.Contact}`} target='_blank'>Whatsaap</a></Button>
-        <Button className='bg-danger' onClick={()=>HandleReject(index)}>Reject</Button>
-        </div>
-      )
-    })}
-  {console.log(FoundProvData)
-  }
-    {FoundProvData.map((x,index)=>{
-  
-      return(
-        
-        <div className="profile-card">
+        <h2>{x.DescriptonPlace}</h2>
+        <img src={x.image ||myImage } className='profile-img' alt="" />
+        <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
+        <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
+        <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
+      </div>
+    ))}
+
+    {FoundProvData.map((x, index) => (
+      <div className="profile-card" key={index}>
         <h1>{x.email}</h1>
         <h2>{x.Fullname}</h2>
         <h3>{x.Contact}</h3>
-        <Button><a  style={{color:"black"}} href={`tel:${x.Contact}`} target='_blank'>Call him</a></Button>
-    
-      {/* <Button style={{marginRight:"8px"}} >MessageHim</Button>  */}
-    <Button style={{marginLeft:"5px", marginRight:'5px'}}> <a style={{color:"black"}} href={`https://wa.me/${x.Contact}`} target='_blank'>Whatsaap</a></Button>
-        <Button className='bg-danger' onClick={()=>HandleReject(index)}>Reject</Button>
-        </div>
-      )
-    })}
-       {/* <h1>FullName:{ProvidedData.FullName}</h1>
-  //     <h2>Desription:{ProvidedData.DescriptionPlace}</h2>
-  //     <h2>Email:{ProvidedData.email}</h2>
-  //     <h3>Contact:{ProvidedData.Contact}</h3>
-  //     <button>Message Him</button> */}
-    </div>:<h1>there is no updates for you broh</h1>}
-     </div>
+        <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
+        <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
+        <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
+      </div>
+    ))}
+  </div>
+</div>
+
   )
 }
 

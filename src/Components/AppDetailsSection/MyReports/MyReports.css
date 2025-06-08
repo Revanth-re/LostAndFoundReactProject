@@ -1,80 +1,137 @@
-.reports-container {
+.my-reports-wrapper {
+  padding: 20px;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 30px 0 20px;
+  color: #053B50;
+}
+
+.my-reports-section {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
   justify-content: center;
 }
 
-.report-card {
+.report-card, .lost-card {
   width: 300px;
+  max-width: 90vw;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  transition: transform 0.2s ease-in-out;
   border-left: 5px solid #4a90e2;
+  transition: transform 0.2s ease-in-out;
 }
 
-.report-card:hover {
+.report-card:hover, .lost-card:hover {
   transform: translateY(-5px);
 }
 
-.report-card h4.item-name {
-  margin-bottom: 12px;
-  color: #333;
+.item-name {
   font-size: 1.2rem;
-  font-weight: 600;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 10px;
   text-transform: capitalize;
 }
 
-.report-card p {
-  margin: 4px 0;
-  color: #555;
-  font-size: 0.95rem;
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
-.lost-reports-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+@media (max-width: 768px) {
+  .report-card, .lost-card {
+    width: 100%;
+    max-width: 95vw;
+    padding: 15px;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.my-reports-wrapper {
   padding: 20px;
 }
 
-.lost-card {
-  width: 300px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+.section-heading {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 30px 0 20px;
+  color: #053B50;
 }
 
-.lost-card:hover {
-  transform: translateY(-5px);
+.my-reports-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  justify-items: center;
 }
 
-.lost-image {
+/* Card style */
+.report-card, .lost-card {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid #eee;
+  max-width: 180px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+  font-size: 12px; /* smaller text */
+  transition: transform 0.2s ease-in-out;
+  border: none; /* ❌ remove blue left border */
 }
 
-.lost-details {
-  padding: 15px;
+.report-card:hover,
+.lost-card:hover {
+  transform: translateY(-4px);
 }
 
-.lost-details h4 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: #333;
-}
-
-.lost-details p {
-  margin: 5px 0;
+.item-name {
   font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+  color: #222;
+}
+
+.report-card p,
+.lost-card p {
+  margin: 3px 0;
+  font-size: 11.5px;
   color: #555;
+}
+
+.button-group {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.button-group button {
+  font-size: 12px;
+  padding: 5px 8px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .my-reports-section {
+    grid-template-columns: repeat(2, 1fr); /* 🟢 two cards per row */
+  }
+
+  .report-card, .lost-card {
+    max-width: 100%;
+  }
 }
