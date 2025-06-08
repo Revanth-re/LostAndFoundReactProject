@@ -91,7 +91,7 @@ const SignUpPage = () => {
             />
           </Form.Group>
 
-          <Button className="signup-btn" type="submit">
+          <Button style={{backgroundColor:"#FF8225"}} className="signup-btn" type="submit">
             Sign Up
           </Button> <br />
           <span>i already have an account </span>

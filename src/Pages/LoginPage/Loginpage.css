@@ -26,12 +26,13 @@
 
 .login-btn {
   width: 100%;
-  background-color: #007bff;
+  background-color: #FF8225;
+  /* background-color: #; */
   border: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
-  background-color: #0056b3;
+  background-color: #a8acb0;
 }
