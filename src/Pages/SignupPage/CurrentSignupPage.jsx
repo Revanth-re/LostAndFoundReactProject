@@ -10,7 +10,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './SignUpPage.css'; // External CSS
 import { toast } from 'react-toastify';
-const SignUpPage = () => {
+const CurrentSignupPage = () => {
   const navigate = useNavigate();
   const [SignupDetails, setSignupDetails] = useState({
     name: '',
@@ -102,4 +102,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default CurrentSignupPage;

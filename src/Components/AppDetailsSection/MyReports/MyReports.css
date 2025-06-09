@@ -42,6 +42,7 @@
 
 .button-group {
   display: flex;
+  width: 13vw;
   justify-content: space-between;
   margin-top: 10px;
 }
@@ -60,7 +61,15 @@
   .button-group {
     flex-direction: column;
     gap: 10px;
+    width: 30vw;
   }
+  #LostReports{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+}
+
 }
 .my-reports-wrapper {
   padding: 20px;

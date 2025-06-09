@@ -2,9 +2,9 @@ import React from 'react'
 import "./AppFeatures.css"
 const AppFeatures = () => {
   return (
-    <div>
-      <h1 style={{textAlign:"center"}}>App Feautures</h1>
-      <div  id='container' >
+    <div style={{marginTop:"8%"}}>
+      <h1 style={{textAlign:"center"}} >App Feautures</h1>
+      <div  id='container' style={{textAlign:"center"}} >
         <div>
             <img src="https://img.freepik.com/free-vector/smart-mobility-concept-illustration_114360-6947.jpg?ga=GA1.1.1112550859.1741454000&semt=ais_hybrid&w=740" alt="" />
             <h3>Lorem, ipsum dolor.</h3>

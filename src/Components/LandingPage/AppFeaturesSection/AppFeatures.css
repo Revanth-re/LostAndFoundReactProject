@@ -190,9 +190,21 @@ flex-wrap: wrap;
         width: 40px;
         height: 40px;
     }
+    #blue{
+    background-color: #FF8225;
+    width: 28vw;
+ 
 }
+#orange{
+    background-color: #053B50;
+    width: 28vw;
+}
+}
+
+
 #blue{
     background-color: #FF8225;
+ 
 }
 #orange{
     background-color: #053B50;

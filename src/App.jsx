@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import SignUpPage from "./Pages/SignupPage/SignUpPage";
+
 import NavbarComp from "./Components/NavbarComp";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import { Route, Routes } from "react-router-dom";
@@ -27,6 +27,8 @@ import ReviewComp from "./ReviewComp/ReviewComp";
 import { getDoc, doc } from "firebase/firestore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CurrentSignupPage from "./Pages/SignupPage/CurrentSignupPage";
+
 // import Landingpage from "./Components/LandingPage/Landingpage";
 // import Chat from './Components/Chat'
 const App = () => {
@@ -104,10 +106,11 @@ const App = () => {
           path=""
           element={<Landingpage setOpenState={setOpenState} />}
         ></Route>
-        <Route path="/signup" element={<SignUpPage />}></Route>
+    
         <Route path="/FoundItems" element={<FoundItems />}></Route>
         <Route path="/LostItems" element={<LostItems />}></Route>
         <Route path="/loginPage" element={<LoginPage />}></Route>
+        <Route path="/CurrentsignUpPage" element={<CurrentSignupPage/>} ></Route>
         <Route
           path="/userdashBoard"
           element={

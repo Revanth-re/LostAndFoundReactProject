@@ -70,7 +70,7 @@ setDataState(ProvidedData.data().Data)
             </Nav>
           ) : (
             <Nav id='ToggleLinks' className="ms-auto">
-              <Nav.Link style={{color:'white'}} as={Link} to="/signup">Signup</Nav.Link>
+              <Nav.Link style={{color:'white'}} as={Link} to="/CurrentsignUpPage">Signup</Nav.Link>
               <Nav.Link style={{color:'white'}} as={Link} to="/loginPage">Login</Nav.Link>
             </Nav>
           )}
