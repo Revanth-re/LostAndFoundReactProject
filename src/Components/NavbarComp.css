@@ -115,7 +115,7 @@ background-color:#023446;
     margin-left: 0;
   }
   #NavbarToggle{
-    margin-top: -5%;
+    margin-top: -4px;
   }
   #ToggleLinks{
     text-align: center;
@@ -123,6 +123,9 @@ background-color:#023446;
     /* background-color: #f0ad4e; */
     align-items: end;
     justify-content: center;
+  }
+  #BackButton{
+    margin-top: 4px;
   }
 }
 img{

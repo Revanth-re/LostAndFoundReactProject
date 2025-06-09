@@ -183,13 +183,18 @@
   background-color: white;
   border: 1px solid #ccc;
 }
-
+#All{
+  height: 17vh;
+}
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .scroll-container {
     margin-top: 5%;
     margin-bottom: 5%;
   }
+  #All{
+  height: 10vh;
+}
 
   #img {
     height: 70px;

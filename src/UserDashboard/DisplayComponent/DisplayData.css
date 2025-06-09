@@ -256,19 +256,23 @@ background-color:#FF8225
     width: 2vh;
   }
   #btn1{
-  width: 35vw;
+    text-align: center;
+  width: 37vw;
   margin-bottom:2% ;
     background-color:#053B50;
-
+padding: 2px;
   font-size:0.9rem
   
 
 
 }
 #btn2{
-  width: 35vw;
+  padding: 1px;
+  width: 37vw;
     font-size:0.9rem;
 
 background-color:#FF8225
+
+
 }
 }

@@ -356,7 +356,40 @@ const DisplayData = ({ AllItems, AllFoundItems, CategoryValue, FilData,setCatSec
 
   const [oneFilteredData, setOneFilteredData] = useState([]);
   const [twoFilteredData, setTwoFilteredData] = useState([]);
+
   const [searchTerm, setSearchTerm] = useState('');
+
+   useEffect(() => {
+      let AllItemsFromDocs = [];
+  
+      const fetchingData = async () => {
+        const allDocs = await getDocs(collection(db, "users"));
+  
+        allDocs.docs.forEach((doc) => {
+          const individualItems = doc.data().WholeItems || [];
+          individualItems.forEach((item) => AllItemsFromDocs.push(item));
+        });
+  
+  
+        setOneFilteredData(AllItemsFromDocs);
+  
+        const FoundDocs = await getDocs(collection(db, "FoundUsers"));
+        let AllItemsFromFoundDocs = [];
+        FoundDocs.docs.forEach((doc) => {
+          const individualFoundItems = doc.data().FoundItems || [];
+          individualFoundItems.forEach((item) =>
+            AllItemsFromFoundDocs.push(item)
+          );
+        });
+  
+        setTwoFilteredData(AllItemsFromFoundDocs);
+      
+        // setCurrentFilDataTwo(AllItemsFromFoundDocs)
+      };
+      // console.log(loading)
+  
+      fetchingData();
+    }, []);
 const [reviews,setReviews]=useState([])
 
   useEffect(() => {

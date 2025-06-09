@@ -49,16 +49,19 @@
 }
 
 .button-group {
+   width: 15vw;
   margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  border-radius: 5px;
 }
 
 .button-group button {
   padding: 0.6rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
+ 
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -66,7 +69,7 @@
 }
 
 .button-group .btn-success {
-  background-color: #28a745;
+  background-color:#ff700b;
 }
 
 .button-group .btn-danger {

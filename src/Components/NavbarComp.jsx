@@ -57,7 +57,7 @@ setDataState(ProvidedData.data().Data)
   return (
     <Navbar className="custom-navbar" expand="lg" collapseOnSelect sticky="top">
       <Container fluid>
-{OpenState?<Button onClick={()=>navigate(-1)}>Back</Button>
+{OpenState?<Button id='BackButton' onClick={()=>navigate(-1)}>Back</Button>
 :        <Navbar.Brand as={Link} to="/"><img src={Logo} style={{width:"50px",height:"50px"}}></img></Navbar.Brand>
 }
         <Navbar.Toggle id='NavbarToggle' aria-controls="navbarScroll" />
