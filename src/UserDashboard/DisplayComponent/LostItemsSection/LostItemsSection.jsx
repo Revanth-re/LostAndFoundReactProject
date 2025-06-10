@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import Logo from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
+// import Logo from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
 
 const LostItemsSection = ({ setCatSection, setFilData }) => {
   //      const HandleValue = (value) => {
