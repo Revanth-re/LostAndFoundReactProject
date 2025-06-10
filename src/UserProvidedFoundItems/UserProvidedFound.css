@@ -1,171 +1,106 @@
-/* .profile-card {
-  max-width: 400px;
-  margin: 30px auto;
-  padding: 25px 30px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  transition: transform 0.3s ease;
-
-}
-
-.profile-card:hover {
-  transform: translateY(-5px);
-}
-
-.profile-card h1 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.profile-card h2 {
-  font-size: 1.2rem;
-  margin: 6px 0;
-  color: #555;
-  font-weight: 500;
-}
-
-.profile-card h3 {
-  font-size: 1rem;
-  color: #888;
-  margin-top: 12px;
-}
-
-.profile-card button {
-  margin-top: 18px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.profile-card button:hover {
-  background-color: #0056b3;
-}
-
- */
 .user-provided-wrapper {
-  padding: 20px;
+  padding: 15px;
 }
 
 .user-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 10px;
-  justify-items: center;
-  text-align: center;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .profile-card {
-  width: 100%;
-  max-width: 240px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
   text-align: center;
-  font-size: 13px;
   transition: transform 0.2s ease;
+  font-size: 0.85rem;
+  max-width: 100%;
 }
 
 .profile-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
-.profile-card h1,
-.profile-card h2,
-.profile-card h3 {
-  margin: 6px 0;
-  font-size: 14px;
-  color: #333;
-  word-wrap: break-word;
-}
-
-.profile-card a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-}
-
-.profile-card .btn {
-  font-size: 12px;
-  padding: 6px 10px;
-  margin-top: 6px;
-  width: 100%;
-}
-
-.profile-card .btn-danger {
-  background-color: #dc3545;
-  border: none;
-}
-
-.profile-card .btn + .btn {
-  margin-top: 5px;
-}
-img{
-  width: 400px;
-  height: 400px;
-}
 .profile-img {
   width: 100%;
-  height: 160px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 768px) {
+#headers h1,
+#headers h2,
+#headers h3 {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+/* BUTTON STYLES */
+.profile-card button {
+  display: block;
+ 
+  width: 22vw;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Call button - Navy Blue */
+.profile-card button:nth-of-type(1) {
+  background-color: #001f4d;
+}
+
+/* WhatsApp button - Green */
+.profile-card button:nth-of-type(2) {
+  background-color: #25D366;
+}
+
+/* Reject button - Red already handled by Bootstrap bg-danger */
+
+/* RESPONSIVE GRID */
+
+/* Tablet view - 2 cards */
+@media screen and (max-width: 992px) {
+  .user-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small mobile view - still 2 cards */
+@media screen and (max-width: 600px) {
+  .user-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .profile-card {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
   .profile-img {
-    height: 140px;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-  .profile-card h1,
-  .profile-card h2,
-  .profile-card h3 {
-    /* margin-left: 200%; */
-    font-size: 13px;
-  
+    height: 130px;
   }
 
-  .profile-card .btn {
-    font-size: 11px;
-    padding: 5px;
-    margin-right: 5px;
-    margin-top:5%;
-  }
-  
-  .profile-card .btn {
-  font-size: 0.6rem;
-  /* padding: 6px 10px; */
-  margin-top: 6px;
-  width: 100%;
-  width: 20vw;
-}
-.profile-card{
-  margin-top: 5%;
-}
-.user-grid{
-  display: flex;
-  flex-direction: column;
-
-    grid-template-columns: auto auto auto;
-   margin-left: 5%;
-   margin-top: 2%;
-   margin-bottom: 5%;
-  
+  #headers h1,
+  #headers h2,
+  #headers h3 {
+    font-size: 0.8rem;
   }
 
+  .profile-card button {
+      width:38vw;
+    font-size: 0.75rem;
+    padding: 6px;
+  }
 }

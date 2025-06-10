@@ -106,11 +106,28 @@ const FoundItems = () => {
                 />
               </Col>
               <Col md={6}>
-                <Form.Control
+              <Form.Select
+                  onChange={(e) => setFoundItems({ ...FoundItems, category: e.target.value })}
+                  required
+                >
+                  <option value="">Select Category</option>
+                  <option value="Mobiles">electronics</option>
+                  <option value="accessories">accessories</option>
+                  <option value="Documents">Documents</option>
+                  <option value="Wallets">Wallets</option>
+                  <option value="Bags">Bags</option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="Earbuds">EarBuds</option>
+                  <option value="otherItems">OtherItems</option>
+                  <option value="Books">Books</option>
+
+                </Form.Select>
+                {/* <Form.Control
                   onChange={(e) => setFoundItems({ ...FoundItems, category: e.target.value })}
                   type="text"
                   placeholder="Category"
-                />
+                /> */}
               </Col>
             </Row>
       
@@ -140,15 +157,11 @@ const FoundItems = () => {
                 />
               </Col>
               <Col md={6}>
-                <Form.Select
+                <Form.Control type='text'
                   onChange={(e) => setFoundItems({ ...FoundItems, location: e.target.value })}
                   required
-                >
-                  <option value="">Select Location</option>
-                  <option>Hyderabad</option>
-                  <option>Karimnagar</option>
-                  <option>Warangal</option>
-                </Form.Select>
+               />
+                
               </Col>
             </Row>
       

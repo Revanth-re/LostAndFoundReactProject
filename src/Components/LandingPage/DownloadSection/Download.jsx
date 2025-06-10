@@ -12,6 +12,10 @@ const Download = ({setOpenState}) => {
     }
   return (
     <div>
+      <section id="Download" className="fade-up">
+ 
+  <div className="fade-right">Your Text Here
+
       <div id='Download' style={{display:"flex",justifyContent:"center",alignItems:"center",gap:"50px"}}>
         
         <div>
@@ -25,7 +29,10 @@ const Download = ({setOpenState}) => {
             <img id='img2' src="https://img.freepik.com/premium-vector/free-download-system-concept-internet-updating-installation-man-with-smartphone-downloading-document-flat-illustration-vector_128772-1201.jpg?ga=GA1.1.1112550859.1741454000&semt=ais_hybrid&w=740" alt="" />
         </div>
       </div>
+      </div>
+      </section>
     </div>
+    
   )
 }
 

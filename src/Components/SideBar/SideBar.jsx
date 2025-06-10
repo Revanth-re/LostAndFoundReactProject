@@ -128,23 +128,23 @@ const SideBar = ({ setCategoryValue, setCatSection, setFilData,state }) => {
 
   return (
     <div className="sidebar">
-  <div className="sidebar-buttons">
+  <div className="sidebar-buttons " >
     <Button id='Button' onClick={() => navigate("/FoundItems")} className="sidebar-btn">
-     <span id='text'>Found Item Report</span>  <span id='span2'>Found</span>
+     <span id='text'> Report-Found-Item</span>  <span id='span2'>Found</span>
     </Button><Button id='Button' style={{backgroundColor:"#053B50"}} onClick={() => navigate("/LostItems")} className="sidebar-btn">
-       <span id='text'>Lost Item Report</span>  <span id='span2'>Lost</span>
+       <span id='text'>Report-Lost-Report</span>  <span id='span2'>Lost</span>
 
   </Button>
   </div>
 
   <div className="sidebar-links" style={{position:"relative"}}>
-    <Nav.Link as={Link} to="/HelpPage"><span id='text'>Help</span> <span id='span'> <MdHelp/>
-      </span></Nav.Link><Nav.Link as={Link} to="/ContactPage"><span id='text'>Contact</span> <span id='span'> <FaSquarePhone/>
-      </span></Nav.Link><Nav.Link as={Link} to="/UserProvidedFound"><span id='text'>Notifications  <Badge bg='warning' color='dark' >{state.length}</Badge></span> <span id='span'> <IoIosNotifications/>   <Badge
+     <Nav.Link as={Link} to="/MyReports"> <span id='text'>MyReports</span> <span id='span'><SiGoogledocs/></span></Nav.Link>
+     <Nav.Link as={Link} to="/MyReview"><span id='text'>Write A Review</span><span id='span'><BsPencilSquare/></span></Nav.Link>
+ <Nav.Link as={Link} to="/UserProvidedFound"><span id='text'>Notifications  <Badge bg='warning' color='dark' >{state.length}</Badge></span> <span id='span'> <IoIosNotifications/>   <Badge
     bg="dark"
     style={{
       position: "absolute",
-      top: 50,
+      top: 30,
       right: 150,
       // bottom:50,
       transform: "translate(50%, -50%)",
@@ -156,9 +156,10 @@ const SideBar = ({ setCategoryValue, setCatSection, setFilData,state }) => {
     {state.length}
   </Badge>
   </span>  </Nav.Link>
-    <Nav.Link as={Link} to="/MyReports"> <span id='text'>MyReports</span> <span id='span'><SiGoogledocs/></span></Nav.Link>
-     <Nav.Link as={Link} to="/MyReview"><span id='text'>Write A Review</span><span id='span'><BsPencilSquare/></span></Nav.Link>
-  </div>
+    <Nav.Link as={Link} to="/HelpPage"><span id='text'>Help</span> <span id='span'> <MdHelp/>
+    </span></Nav.Link><Nav.Link as={Link} to="/ContactPage"><span id='text'>Contact</span> <span id='span'> <FaSquarePhone/>
+    </span></Nav.Link>
+    </div>
 </div>
 
   );

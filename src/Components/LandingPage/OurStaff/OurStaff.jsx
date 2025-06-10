@@ -3,6 +3,11 @@ import React from 'react'
 const OurStaff = () => {
   return (
     <div style={{margin:'5%'}}>
+
+<section id="OurStaff" className="fade-up">
+  {/* <img src="..." className="fade-left" /> */}
+  <div className="fade-right">
+
         <h1 style={{textAlign:"center"}}>Our staff</h1>
       <div id='OurStaff' >
 <div>
@@ -26,6 +31,8 @@ const OurStaff = () => {
     <p>Lorem ipsum dolor sit amet consectetur Lorem, ipsum dolor.</p>
 </div>
       </div>
+      </div>
+      </section>
     </div>
   )
 }

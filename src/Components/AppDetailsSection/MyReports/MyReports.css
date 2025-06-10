@@ -1,147 +1,158 @@
 .my-reports-wrapper {
-  padding: 20px;
+  padding: 30px;
+  background-color: #f9f9f9;
 }
 
 .section-heading {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin: 30px 0 20px;
   color: #053B50;
+  font-weight: bold;
 }
 
-.my-reports-section {
-  display: flex;
-  flex-wrap: wrap;
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  justify-content: center;
+  margin-bottom: 40px;
 }
 
-.report-card, .lost-card {
-  width: 300px;
-  max-width: 90vw;
+.report-card {
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
   padding: 20px;
-  border-left: 5px solid #4a90e2;
-  transition: transform 0.2s ease-in-out;
-  /* border: 2px solid; */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.report-card:hover, .lost-card:hover {
+.report-card:hover {
   transform: translateY(-5px);
 }
 
 .item-name {
   font-size: 1.2rem;
-  color: #222;
-  font-weight: bold;
+  color: #FF8225;
   margin-bottom: 10px;
-  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.report-card p {
+  font-size: 0.95rem;
+  margin: 4px 0;
 }
 
 .button-group {
+  margin-top: 15px;
   display: flex;
-  width: 13vw;
   justify-content: space-between;
-  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .report-card, .lost-card {
-    width: 100%;
-    max-width: 95vw;
-    padding: 15px;
+.button-group button {
+  flex: 1 1 48%;
+  margin: 5px 2px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  padding: 10px 0;
+}
+
+.edit-btn {
+  background-color: #053B50 !important;
+}
+
+/* RESPONSIVE STYLES */
+
+@media screen and (max-width: 1024px) {
+  .report-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .report-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .edit-btn{
+    width: 40vw !important;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
+  }
+
+  .report-card p {
+    font-size: 0.85rem;
+  }
+  .button-group button{
+    width: 30vw !important;
+  }
+  #edit-btn{
+    width: 40vw;
+  }
+  .report-card{
+    width: 40vw;
+    margin-left: 0%;
+  }
+}
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.report-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+
+}
+
+.report-card:hover {
+  transform: scale(1.03);
+}
+
+@media screen and (max-width: 480px) {
+  .report-grid {
+    grid-template-columns:  auto;
+    
+  }
+.report-card{
+  width: 80vw;
+  padding: 10% !important;
+}
+  .section-heading {
+    font-size: 1.4rem;
   }
 
   .item-name {
     font-size: 1rem;
   }
 
-  .button-group {
-    flex-direction: column;
-    gap: 10px;
-    width: 30vw;
+  .report-card p {
+    font-size: 0.8rem;
   }
-  #LostReports{
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  align-items: center;
-}
-
-}
-.my-reports-wrapper {
-  padding: 20px;
-}
-
-.section-heading {
-  text-align: center;
-  font-size: 1.6rem;
-  margin: 30px 0 20px;
-  color: #053B50;
-}
-
-.my-reports-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-  justify-items: center;
-}
-
-/* Card style */
-.report-card, .lost-card {
-  width: 100%;
-  max-width: 180px;
-  background-color: #fff;
-  border-radius: 10px;
-  /* box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); */
-  padding: 10px;
-  font-size: 12px; /* smaller text */
-  transition: transform 0.2s ease-in-out;
-  border: none; /* ❌ remove blue left border */
-}
-
-.report-card:hover,
-.lost-card:hover {
-  transform: translateY(-4px);
-}
-
-.item-name {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 6px;
-  text-transform: capitalize;
-  color: #222;
-}
-
-.report-card p,
-.lost-card p {
-  margin: 3px 0;
-  font-size: 11.5px;
-  color: #555;
-}
-
-.button-group {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.button-group button {
-  font-size: 12px;
-  padding: 5px 8px;
-  width: 100%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .my-reports-section {
-    grid-template-columns: repeat(2, 1fr); /* 🟢 two cards per row */
+  .button-group button{
+width: 40 !important;
   }
-
-  .report-card, .lost-card {
-    max-width: 100%;
+  #edit-btn{
+    width: 100vw !important;
   }
 }
+

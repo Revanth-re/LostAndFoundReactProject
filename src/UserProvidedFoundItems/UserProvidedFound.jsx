@@ -95,38 +95,48 @@ alert("User Rejected")
  
   return (
    <div className="user-provided-wrapper">
-  <div className="user-grid">
-    {ProvidedData?<div>
+ 
+    {ProvidedData?<div className='user-grid'>
       {ProvidedData.map((x, index) => (
       <div className="profile-card" key={index}>
-        <h1>{x.email}</h1>
+      <div id='headers'>
+        <h1 style={{textAlign:"center",marginRight:"10%"}}>{x.email}</h1>
         <h2>{x.Fullname}</h2>
         <h3>{x.Contact}</h3>
         <h2>{x.DescriptonPlace}</h2>
+        </div>
         <img src={x.image ||myImage } className='profile-img' alt="" />
         <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
         <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}
+    </div>:<h1>No notifications</h1>}
+   
+{FoundProvData>0?<div className='user-grid'>
 
-    {FoundProvData.map((x, index) => (
+ <h1>Found Items</h1>
+  {FoundProvData.map((x, index) => (
+    
+    
       <div className="profile-card" key={index}>
+        <div id='headers'>
+        <h1>usaiyiwd</h1>  
         <h1>{x.email}</h1>
         <h2>{x.Fullname}</h2>
         <h3>{x.Contact}</h3>
+        </div>
         <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
         <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}
 
-    </div>:
-    <div>
-      <h1>No notifications Yet</h1>
-      </div>}
-      </div>
+    </div>:<h1>
+      No-Found-Items-notifications
+    </h1>}
 </div>
+
 
   )
 }
