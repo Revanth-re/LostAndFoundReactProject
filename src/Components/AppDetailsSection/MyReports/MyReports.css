@@ -11,6 +11,7 @@
   font-weight: bold;
 }
 
+/* Grid Layout */
 .report-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -18,18 +19,22 @@
   margin-bottom: 40px;
 }
 
+/* Card Styling */
 .report-card {
-  background-color: #fff;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
   transition: transform 0.3s ease;
 }
 
 .report-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.03);
 }
 
+/* Item Name */
 .item-name {
   font-size: 1.2rem;
   color: #FF8225;
@@ -37,46 +42,66 @@
   font-weight: 600;
 }
 
+/* Description Text */
 .report-card p {
   font-size: 0.95rem;
   margin: 4px 0;
 }
 
+/* Button Group */
 .button-group {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
+/* Buttons */
 .button-group button {
-  flex: 1 1 48%;
-  margin: 5px 2px;
+  /* flex: 1 1 45%; Responsive widt */
+  /* min-width: 120px; */
+  width:6vw;
   border: none;
   border-radius: 8px;
   font-weight: 600;
   color: white;
   padding: 10px 0;
+  margin-left: 7%;
 }
 
 .edit-btn {
-  background-color: #053B50 !important;
+  background-color: #053B50;
 }
 
-/* RESPONSIVE STYLES */
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* Responsive: Tablet */
 @media screen and (max-width: 1024px) {
   .report-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* Responsive: Mobile */
 @media screen and (max-width: 768px) {
   .report-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
   }
-  .edit-btn{
-    width: 40vw !important;
+
+  .report-card {
+    width: 100%;
+    padding: 20px;
   }
 
   .section-heading {
@@ -90,69 +115,54 @@
   .report-card p {
     font-size: 0.85rem;
   }
-  .button-group button{
-    width: 30vw !important;
+
+  .button-group {
+    justify-content: center;
   }
-  #edit-btn{
-    width: 40vw;
-  }
-  .report-card{
-    width: 40vw;
+.button-group{
+}
+  .button-group button {
+    /* flex: 1 1 80%; */
+    width: 30vw;
+    margin-bottom: 10px;
     margin-left: 0%;
   }
 }
-/* Fade-in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Button Group */
+.button-group {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center; /* center-align */
+  gap: 10px;
+  flex-wrap: nowrap; /* prevent wrapping on mobile */
 }
 
-.report-card {
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
-  background: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-
+/* Buttons */
+.button-group button {
+  width: 40%; /* enough width for two inline buttons */
+  min-width: 100px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  padding: 10px 0;
 }
 
-.report-card:hover {
-  transform: scale(1.03);
+/* Specific button color */
+.edit-btn {
+  background-color: #053B50;
 }
 
-@media screen and (max-width: 480px) {
-  .report-grid {
-    grid-template-columns:  auto;
-    
-  }
-.report-card{
-  width: 80vw;
-  padding: 10% !important;
-}
-  .section-heading {
-    font-size: 1.4rem;
+/* Responsive (if needed) */
+@media screen and (max-width: 768px) {
+  .button-group {
+    justify-content: center;
+    gap: 10px;
+    margin-left: 40%;
   }
 
-  .item-name {
-    font-size: 1rem;
-  }
-
-  .report-card p {
-    font-size: 0.8rem;
-  }
-  .button-group button{
-width: 40 !important;
-  }
-  #edit-btn{
-    width: 100vw !important;
+  .button-group button {
+    width: 42vw; /* fits side by side on most mobiles */
+    margin-bottom: 0;
   }
 }
-

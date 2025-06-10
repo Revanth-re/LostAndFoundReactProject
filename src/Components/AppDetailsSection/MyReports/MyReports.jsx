@@ -6,7 +6,8 @@ import { updateDoc } from "firebase/firestore";
 import "./MyReports.css";
 import LoginPage from "../../../Pages/LoginPage/LoginPage";
 import { Button } from "react-bootstrap";
-
+  import { FaRegEdit } from "react-icons/fa";
+  import { MdDeleteForever } from "react-icons/md";
 const MyReports = () => {
   const [Reports, SetFoundReports] = useState([]);
   const [Lostreports, setLostReports] = useState([]);
@@ -81,8 +82,8 @@ const MyReports = () => {
           <p><strong>Email:</strong> {x.email}</p>
           <p><strong>Date Lost:</strong> {x.dateLost}</p>
           <div className="button-group">
-            <Button id="edit-btn" variant="danger" onClick={() => handleDelete(x, index)}>Delete</Button>
-            <Button id="edit-btn">Edit</Button>
+            <Button id="edit-btn" variant="danger" onClick={() => handleDelete(x, index)}><MdDeleteForever /></Button>
+      <Button id="edit-btn">< FaRegEdit/></Button>
           </div>
         </div>
       ))}
@@ -107,8 +108,9 @@ const MyReports = () => {
           <p><strong>Email:</strong> {x.email}</p>
           <p><strong>Phone:</strong> {x.contactPhone}</p>
           <div className="button-group">
-            <Button  id="edit-btn" variant="danger" onClick={() => handleFoundDelete(x, index)}>Delete</Button>
-            <Button id="edit-btn">Edit</Button>
+            <Button  id="edit-btn" variant="danger" onClick={() => handleFoundDelete(x, index)}> <MdDeleteForever /></Button> <Button id="edit-btn">< FaRegEdit/></Button>
+          
+
           </div>
         </div>
       ))}

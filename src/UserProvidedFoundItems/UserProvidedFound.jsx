@@ -5,8 +5,11 @@ import { doc } from 'firebase/firestore';
 import "./UserProvidedFound.css"
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { FaWhatsapp } from "react-icons/fa";
 import {Badge} from "react-bootstrap"
-import LoginPage from '../Pages/LoginPage/LoginPage';
+
+import { MdCall } from "react-icons/md";
+
 import myImage from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
 const UserProvidedFound = () => {
     const [ProvidedData,setProvidedData]=useState([])
@@ -106,8 +109,8 @@ alert("User Rejected")
         <h2>{x.DescriptonPlace}</h2>
         </div>
         <img src={x.image ||myImage } className='profile-img' alt="" />
-        <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
-        <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
+    <a id='icon' href={`tel:${x.Contact}`} target="_blank" rel="noreferrer"><MdCall/></a>
+       <a id='icon2' href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer"><FaWhatsapp/></a>
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}
@@ -126,8 +129,8 @@ alert("User Rejected")
         <h2>{x.Fullname}</h2>
         <h3>{x.Contact}</h3>
         </div>
-        <Button><a href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
-        <Button><a href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
+        <Button><a id='Button' href={`tel:${x.Contact}`} target="_blank" rel="noreferrer">Call him</a></Button>
+        <Button><a style={{textDecoration:"none"}} href={`https://wa.me/${x.Contact}`} target="_blank" rel="noreferrer">WhatsApp</a></Button>
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}

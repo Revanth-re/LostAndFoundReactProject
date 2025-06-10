@@ -14,11 +14,10 @@
 }
 
 .profile-avatar {
-  width: 120px;
-  height: 120px;
+ 
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #007bff;
+  border: 3px solid #0b0b0b;
 }
 
 .upload-input {
@@ -32,11 +31,13 @@
 #Button{
   width: 15vw;
   margin-top: 1%;
+  margin-left: 5%;
 }
 @media (max-width:768px) {
   #Button{
   width: 20vw;
   margin-top: 1%;
+  margin-left:10%;
 }
 
 }

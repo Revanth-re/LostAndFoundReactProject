@@ -142,20 +142,29 @@
   height: 100vh;
   padding: 1.5rem;
 } */
+ 
+
+.sidebar-buttons{
+   background-color:white;
+padding: 15%;
+  /* background-color: #1b5289; */
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  /* width: 16vw; */
+
+
+}
 .sidebar-buttons Button{
 
-width: 15vw !important;
+width: 16vw;
 background-color: #FF8225;
-margin-left: 13%;
+margin-left: 12%;
 color: white;
 border: 1px solid;
 }
-.sidebar-buttons{
-   background-color: white;
-padding: 5%;
-  /* background-color: #1b5289; */
-  border-radius: 10px;
-
+#Button{
+  margin-left: 15% !important;
 }
 #span{
   display:none ;
@@ -197,8 +206,9 @@ padding: 5%;
 
   .sidebar-buttons Button {
     width: auto;
-    padding: 0.5rem 0.75rem;
+    /* padding: 0.5rem 0.75rem; */
     font-size: 0.9rem;
+    margin-left: 10% !important;
   }
 
   .sidebar-links {
@@ -254,7 +264,7 @@ border: 1px solid;
 }
 
 #Button{
-  margin-left: 0%;
+  margin-left: 5%;
   width: 18vw;
 }
 #span{
@@ -266,11 +276,16 @@ margin-right: -14%;
   /* background-color: #1b5289; */
   gap: 0px;
   border-radius: 5px;
+
 }
 #span2{
   display: block;
 }
 .sidebar-buttons Button{
   width: 20vw !important;
+  margin-left: 10% !important;
+}
+#Button{
+  margin-left: 0% !important;
 }
 }

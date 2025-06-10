@@ -344,6 +344,7 @@ import { Card,Row,Col } from 'react-bootstrap';
 import { FaThumbsUp } from 'react-icons/fa';
 import Banner from '../../Components/BannerComp/Banner';
 import Footer from '../../Components/FooterComponent/Footer';
+import { FaLocationDot } from "react-icons/fa6";
 // import Button from 'react-bootstrap';
 const DisplayData = ({ AllItems, AllFoundItems, CategoryValue, FilData,setCatSection, CatSection, setFilData ,loading }) => {
   
@@ -462,7 +463,11 @@ const [reviews,setReviews]=useState([])
     }));
   };
   
-// const [loading,setLoading]=useState(true)
+// const [loading,setLoading]=useState(tru\
+console.log(AllItems)
+console.log(AllFoundItems)
+
+
   return (
   <>
   {loading ?<div>
@@ -509,10 +514,12 @@ return(
         <img src={item.imageURL} alt={item.name} />
         <div className="card-content">
           <h3>{item.itemname}</h3>
-          <p className="meta">{item.category}</p>
-          <p>{item.brand}</p> 
+          <h4 className="meta">Color:{item.color}</h4>
+
+          <p>Brand:{item.brand}</p> 
+
          
-          <div className="reward">Contact:{item.contactPhone}</div>
+          <div className="reward"><FaLocationDot/>{item.location}</div>
           <Button id='btn1'   onClick={() => handleLost(item)}>I-Found-It</Button>
            <Button id='btn2'   onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
 
@@ -537,10 +544,10 @@ return(
         <img src={item.imageURL}  />
         <div className="card-content">
           <h3>{item.itemname}</h3>
-          <p className="meta">Category:{item.category}</p>
-          {/* <p>{item.description}</p> */}
-          <p>Brand:{item.brand}</p>
-          <div className="reward">{item.price}</div>
+          {/* <p className="meta">Category:{item.category}</p> */}
+          <p style={{color:"black"}}>Color:{item.color}</p>
+          <p style={{fontWeight:"700"}}>Brand:{item.brand}</p>
+          <div className="reward"><FaLocationDot/>{item.location}</div>
           <Button id='btn1'  onClick={()=>handleFound(item)}>I-Found-It</Button>
           <Button  id='btn2'  onClick={() => handleMoreDetails(item.itemname, i)}>MoreDetails</Button>
         </div>
@@ -558,9 +565,9 @@ return(
 
    <Banner></Banner>
  <div>
-  <div className="my-5" style={{margin:"4%"}} >
+  <div className="my-5" style={{margin:"4%", gap:"10px"}} >
       <h4 className="text-center mb-4">💬 What Others Are Saying</h4>
-      <Row xs={1} md={4} lg={4} className="g-4">
+      <Row xs={1} md={4} lg={3} className="g-4">
         {reviews.map((x, index) => (
           <Col key={index}>
             <Card className="shadow-sm h-100">
@@ -571,14 +578,7 @@ return(
                 <div className="mb-2">
                   <strong>Rating:</strong> {'⭐'.repeat(x.rating)} ({x.rating}/5)
                 </div>
-                <Button
-                  variant="outline-primary"
-                  size="sm"
-                  onClick={() => handleLike(index)}
-                >
-                  <FaThumbsUp className="me-2" />
-                  Like {likes[index] || 0}
-                </Button>
+                
               </Card.Body>
             </Card>
           </Col>
