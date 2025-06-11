@@ -7,7 +7,7 @@ import { doc,getDoc } from 'firebase/firestore';
 import { db } from '../FireBaseConfig/Firebase';
 import { RxAvatar } from "react-icons/rx";
 import Logo from "/31and32r react/MyReactProject/ReactProject/src/assets/Logo.png"
-const NavbarComp = ({OpenState}) => {
+const NavbarComp = ({OpenState,setOpenState}) => {
 console.log(OpenState)
 
   const [state,setDataState]=useState([])
@@ -51,7 +51,14 @@ setDataState(ProvidedData.data().Data)
        
   },[])
 //  console.log(state.length)
- 
+ const handlePage=()=>{
+  setOpenState(true)
+  navigate("CurrentsignUpPage")
+ }
+ const handlePage2=()=>{
+  setOpenState(true)
+  navigate("loginPage")
+ }
   
 
   return (
@@ -70,9 +77,17 @@ setDataState(ProvidedData.data().Data)
             </Nav>
           ) : (
             <Nav id='ToggleLinks' className="ms-auto">
-              <Nav.Link style={{color:'white'}} as={Link} to="/CurrentsignUpPage">Signup</Nav.Link>
-              <Nav.Link style={{color:'white'}} as={Link} to="/loginPage">Login</Nav.Link>
-            </Nav>
+  <Button onClick={handlePage}> 
+    Signup
+
+ 
+ </Button>
+ <Button onClick={handlePage2}>
+                {/* <Nav.Link style={{color:'white'}} as={Link} to="/loginPage"></Nav.Link> */}
+             Login
+
+ </Button>
+              </Nav>
           )}
         </Navbar.Collapse>
       </Container>

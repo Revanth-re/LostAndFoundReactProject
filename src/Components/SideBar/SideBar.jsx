@@ -128,10 +128,10 @@ const SideBar = ({ setCategoryValue, setCatSection, setFilData,state }) => {
 
   return (
     <div className="sidebar">
-  <div className="sidebar-buttons " >
-    <Button id='Button' onClick={() => navigate("/FoundItems")} className="sidebar-btn">
-     <span id='text'> Report-Found-Item</span>  <span id='span2'>Found</span>
-    </Button><Button id='Button' style={{backgroundColor:"#053B50"}} onClick={() => navigate("/LostItems")} className="sidebar-btn">
+  <div className="sidebar-buttons" >
+    <Button id='btns' className='btns'  onClick={() => navigate("/FoundItems")} >
+     <span id='text'  > Report-Found-Item</span>  <span id='span2'>Found</span>
+    </Button><Button id='btns'className='buttons2' style={{backgroundColor:"#FF8225"}}  onClick={() => navigate("/LostItems")} >
        <span id='text'>Report-Lost-Report</span>  <span id='span2'>Lost</span>
 
   </Button>

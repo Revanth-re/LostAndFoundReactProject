@@ -184,8 +184,17 @@ background-color:#FF8225
   background-color: #053B50;
 }
 
-#BtnSec2{
-  
+#search{
+ 
+                width: 100%;
+                max-width:500px;
+                padding: 10px;
+                border-radius:8px;
+                border:1px solid #ccc;
+                margin: 0 auto ;
+                display:block;
+                margin-bottom: -20% !important;
+         
 }
 @media (max-width: 768px) {
   .scroll-cards {
@@ -281,5 +290,8 @@ padding: 2px;
 background-color:#FF8225
 
 
+}
+#search{
+  margin-bottom: -10%;
 }
 }

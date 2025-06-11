@@ -114,7 +114,7 @@ alert("User Rejected")
         <Button className='bg-danger' onClick={() => HandleReject(index)}>Reject</Button>
       </div>
     ))}
-    </div>:<h1>No notifications</h1>}
+    </div>:<h1 className='no-items-message'>No notifications yet</h1>}
    
 {FoundProvData>0?<div className='user-grid'>
 
@@ -135,7 +135,7 @@ alert("User Rejected")
       </div>
     ))}
 
-    </div>:<h1>
+    </div>:<h1 className='no-items-message' >
       No-Found-Items-notifications
     </h1>}
 </div>

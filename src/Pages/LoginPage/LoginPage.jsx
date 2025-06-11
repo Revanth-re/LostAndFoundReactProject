@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { authentication } from '../../FireBaseConfig/Firebase';
 import './LoginPage.css'; // External CSS

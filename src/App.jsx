@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
-
-import NavbarComp from "./Components/NavbarComp";
 import LoginPage from "./Pages/LoginPage/LoginPage";
+import NavbarComp from "./Components/NavbarComp";
 import { Route, Routes } from "react-router-dom";
 import UserDashBoard from "./UserDashboard/UserDashBoard";
 import LostItems from "./Components/LostItems/LostItems";
@@ -96,7 +95,7 @@ const App = () => {
   return (
     <div>
       {/* <CardDetails></CardDetails> */}
-      <NavbarComp OpenState={OpenState} />
+      <NavbarComp OpenState={OpenState} setOpenState={setOpenState} />
       {/* <Route></Route> */}
       {/* <Button onClick={handlestate}>Login</Button> */}
       {/* <Chat></Chat> */}

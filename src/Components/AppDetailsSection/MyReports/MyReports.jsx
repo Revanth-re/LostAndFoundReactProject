@@ -68,7 +68,7 @@ const MyReports = () => {
   return (
 <div className="my-reports-wrapper">
   <h1 className="section-heading">📦 LostItems</h1>
-  {Reports.length > 0 ? (
+  {Reports ? (
     <div className="report-grid">
       {Reports.map((x, index) => (
         <div key={index} className="report-card"     style={{ animationDelay: `${index * 0.1}s` }}
@@ -89,11 +89,11 @@ const MyReports = () => {
       ))}
     </div>
   ) : (
-    <h1>You haven’t posted Lost Items yet</h1>
+    <h1 className="no-items-message">You haven’t posted Lost Items yet</h1>
   )}
 
   <h1 className="section-heading">📦 FoundItems</h1>
-  {Lostreports.length > 0 ? (
+  {Lostreports? (
     <div className="report-grid">
       {Lostreports.map((x, index) => (
         <div key={index} className="report-card"     style={{ animationDelay: `${index * 0.1}s` }}
@@ -116,7 +116,7 @@ const MyReports = () => {
       ))}
     </div>
   ) : (
-    <h1>You haven’t posted Found Items</h1>
+    <h1 className="no-items-message">You haven’t posted Found Items</h1>
   )}
 </div>
 

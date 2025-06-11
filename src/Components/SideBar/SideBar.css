@@ -1,4 +1,4 @@
-/* Container that wraps sidebar and main content */
+Container that wraps sidebar and main content
 .sidebar-container {
   display: flex;
   overflow-y: hidden;
@@ -155,17 +155,8 @@ padding: 15%;
 
 
 }
-.sidebar-buttons Button{
 
-width: 16vw;
-background-color: #FF8225;
-margin-left: 12%;
-color: white;
-border: 1px solid;
-}
-#Button{
-  margin-left: 15% !important;
-}
+
 #span{
   display:none ;
 }
@@ -175,7 +166,96 @@ border: 1px solid;
 #span2{
   display: none;
 }
+#Button{
+  margin-left: 30% !important;
+}
+.sidebar-buttons{
 
+/* width: 16vw; */
+/* background-color: #FF8225; */
+ margin-left: 2% !important; 
+color: white;
+border: 1px solid;
+}
+/* ======= TOGGLE BUTTON ALIGNMENT FIXES ======= */
+
+#ToggleBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+#ToggleBtns button {
+  width: 80%;
+  max-width: 300px;
+  font-size: 1rem;
+  background-color: rgb(190, 39, 39);
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#ToggleBtns button:hover {
+  background-color: rgb(150, 20, 20);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+#BtnSec1 button {
+  background-color: rgb(56, 56, 244);
+  color: white;
+}
+
+#BtnSec2 button {
+  background-color: rgb(198, 29, 29);
+  color: white;
+}
+
+/* Toggle Button Wrapper */
+#ToggleBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Toggle Buttons */
+#ToggleBtns button {
+  width: 85%;
+  max-width: 300px;
+  font-size: 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+#ToggleBtns button:hover {
+  background-color: #a72834;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#btns{
+  width: 15vw;
+}
+.btns{
+  background-color: #053B50 !important;
+ 
+  
+}
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
@@ -286,6 +366,26 @@ margin-right: -14%;
   margin-left: 10% !important;
 }
 #Button{
-  margin-left: 0% !important;
+  margin-left: 0%;
+}
+#ToggleBtns {
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 10px;
+}
+
+#ToggleBtns button {
+  flex: 1 1 45%;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  min-width: 120px;
+  background-color: #dc3545;
+}
+.buttons2{
+  width: 40vw !important;
+  margin-right:20% !important
+  
 }
 }

@@ -17,7 +17,7 @@ const Landingpage = ({setOpenState}) => {
       console.log("ertgyhjuk");
       
         setOpenState(true)
-        navigate("/loginPage")
+        navigate("/CurrentsignUpPage")
     }
 
   return (
