@@ -74,7 +74,7 @@ toast.success("You-are-Logged-in");
             Login
           </Button>
              <span>i dont have an account </span>
-          <a href="/CurrentsignUpPage">signup</a>
+         <Link to="/CurrentsignUpPage">Signup</Link>
         </Form>
       </div>
     </div>

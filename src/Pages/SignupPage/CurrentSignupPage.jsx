@@ -7,7 +7,7 @@ import {
   updateProfile
 } from 'firebase/auth';
 import { Form, Button, Alert } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import './SignUpPage.css'; // External CSS
 import { toast } from 'react-toastify';
 const CurrentSignupPage = () => {
@@ -95,7 +95,7 @@ const CurrentSignupPage = () => {
             Sign Up
           </Button> <br />
           <span>i already have an account </span>
-          <a href="/loginPage">login</a>
+          <Link to="/loginPage">Login</Link>
         </Form>
       </div>
     </div>
